@@ -1,13 +1,33 @@
-<style> 
-iframe::-webkit-scrollbar{display:none}
-.iframe{background:#fff;overflow:hidden}
-.iframe iframe{width:100%;height:540px;border:0;display:block}
-.iframe-content{position:absolute;width:100%;height:540px;overflow:auto;top:0;bottom:0;-webkit-overflow-scrolling:touch}
-
-@media screen and (max-width:992px){.iframe iframe{height:720px}}
-@media screen and (max-width:768px){.iframe iframe{height:720px}}
-@media screen and (max-width:720px){.iframe iframe{height:720px}}
-@media screen and (max-width:479px){.iframe iframe{height:480px}}
-@media screen and (max-height:400px){.iframe iframe{height:360px}}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {width: 100%; height: 100%; margin: 0; padding: 0}
+iframe {width: 100%; transform-origin: left top;}
+.imgbox{text-align:center;display:block;}
 </style>
-<div class="iframe"> <iframe src="https://griesingerml.wixsite.com/iiot"></iframe> </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>   
+<script>
+jQuery(document).ready(function($){
+    nsZoomZoom(); 
+    $(window).resize(function(){ 
+        nsZoomZoom();
+    });
+    function nsZoomZoom(){
+        htmlWidth = $('html').innerWidth();
+        iframeWidth = 800;
+        if (htmlWidth > iframeWidth)
+            scale = 1;
+        else {
+            scale = htmlWidth / (iframeWidth); 
+        }
+        $("iframe").css('transform', 'scale(' + scale + ')');
+        $("iframe").css('width', '800');
+    } 
+}); 
+</script>
+</head>
+<body>
+<div class=imgbox>
+    <iframe src="https://griesingerml.wixsite.com/iiot" scrolling=no width=800 height=600 frameborder=no></iframe>
+</div>
+</body>
