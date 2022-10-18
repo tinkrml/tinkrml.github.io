@@ -1,15 +1,25 @@
 <style> 
-.myIframe {
+.intrinsic-container {
   position: relative;
-  padding-bottom: 65.25%;
-  padding-top: 30px;
   height: 0;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch; /*<<--- THIS IS THE KEY*/ 
-  border: solid black 1px;
+  overflow: hidden;
 }
 
-.myIframe iframe {
+
+/* 16x9 Aspect Ratio */
+
+.intrinsic-container-16x9 {
+  padding-bottom: 56.25%;
+}
+
+
+/* 4x3 Aspect Ratio */
+
+.intrinsic-container-4x3 {
+  padding-bottom: 75%;
+}
+
+.intrinsic-container iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -17,4 +27,6 @@
   height: 100%;
 }
 </style>
-        <iframe  class="myIframe" src="https://griesingerml.wixsite.com/iiot"></iframe>
+<div class="intrinsic-container intrinsic-container-16x9">
+  <iframe src="https://griesingerml.wixsite.com/iiot" allowfullscreen></iframe>
+</div>
