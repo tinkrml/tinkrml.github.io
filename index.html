@@ -1,33 +1,21 @@
+<html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to make Iframe Responsive</title>
 <style>
-body, html {width: 100%; height: 100%; margin: 0; padding: 0}
-iframe {width: 100%; transform-origin: left top;}
-.imgbox{text-align:center;display:block;}
+html,body        {height:100%;}
+.wrapper         {width:80%;height:100%;margin:0 auto;background:#CCC}
+.h_iframe        {position:relative;}
+.h_iframe .ratio {display:block;width:100%;height:auto;}
+.h_iframe iframe {position:absolute;top:0;left:0;width:100%; height:100%;}
 </style>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>   
-<script>
-jQuery(document).ready(function($){
-    nsZoomZoom(); 
-    $(window).resize(function(){ 
-        nsZoomZoom();
-    });
-    function nsZoomZoom(){
-        htmlWidth = $('html').innerWidth();
-        iframeWidth = 800;
-        if (htmlWidth > iframeWidth)
-            scale = 1;
-        else {
-            scale = htmlWidth / (iframeWidth); 
-        }
-        $("iframe").css('transform', 'scale(' + scale + ')');
-        $("iframe").css('width', '800');
-    } 
-}); 
-</script>
 </head>
 <body>
-<div class=imgbox>
-    <iframe src="https://griesingerml.wixsite.com/iiot" scrolling=no width=800 height=600 frameborder=no></iframe>
+<div class="wrapper">
+<div class="h_iframe">
+<img class="ratio" src=""/>
+<iframe src="https://griesingerml.wixsite.com/iiot" frameborder="0" allowfullscreen></iframe>
+</div>
+<p>Please scale the "result" window to notice the effect.</p>
 </div>
 </body>
+</html>
