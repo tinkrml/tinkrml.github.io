@@ -4,13 +4,20 @@
 <title>How to make Iframe Responsive</title>
 <style>
 html,body        {height:100%;}
-iframe {margin:0 auto;display:block;position:absolute;top:0;left:0;width:100%; height:auto;}
+  body {
+    margin: 0;            /* Reset default margin */
+    background: #000;
+}
+iframe {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */
+    height: 100vh;        /* Viewport-relative units */
+    width: 100vw;
+}
 </style>
 </head>
 <body>
 <iframe src="https://griesingerml.wixsite.com/iiot" frameborder="0" allowfullscreen></iframe>
-</div>
-<p>Please scale the "result" window to notice the effect.</p>
-</div>
 </body>
 </html>
